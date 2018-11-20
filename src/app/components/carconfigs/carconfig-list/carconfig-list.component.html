@@ -1,0 +1,40 @@
+<h5 class="text-center">Listado de configuraciones</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Aceleración</th>
+            <th scope="col">Frenada</th>
+            <th scope="col">Refrigeración</th>
+            <th scope="col">Aerodinámica</th>
+            <th scope="col">Ahorro de combustible</th>
+            <th scope="col">Conducción</th>
+            <th scope="col">Rendimiento</th>
+            <th scope="col">Ahorro de neumático</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Borrar</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let carConfig of carConfigList">
+                <td>{{carConfig.acceleration}}</td>
+                <td>{{carConfig.braking}}</td>
+                <td>{{carConfig.cooling}}</td>
+                <td>{{carConfig.downforce}}</td>
+                <td>{{carConfig.fuel_economy}}</td>
+                <td>{{carConfig.handling}}</td>
+                <td>{{carConfig.reliability}}</td>
+                <td>{{carConfig.tyre_economy}}</td>
+                <td>{{carConfig.date_config | date: 'dd/MM/yyyy'}}</td>
+                <td>
+                    <a class="btn btn btn-light" (click)="onEdit(carConfig)">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" (click)="onDelete(carConfig.$key)">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+</table>

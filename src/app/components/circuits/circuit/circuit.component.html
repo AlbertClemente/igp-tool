@@ -1,0 +1,63 @@
+<form #circuitForm="ngForm" (ngSubmit)="onSubmit(circuitForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="circuitService.selectedCircuit.$key">
+    <div class="form-group">
+        <label for="race_number">Carrera número:</label>
+        <input type="text" class="form-control" id="race_number" name="race_number" #race_number="ngModel" [(ngModel)]="circuitService.selectedCircuit.race_number" placeholder="Carrera número:">
+    </div>
+    <div class="form-group">
+        <label for="race_name">Nombre de la carrera</label>
+        <input type="text" class="form-control" id="race_name" name="race_name" #race_name="ngModel" [(ngModel)]="circuitService.selectedCircuit.race_name" placeholder="Nombre de la carrera">
+    </div>
+    <div class="form-group">
+        <label for="num_laps">Nº de vueltas</label>
+        <input type="text" class="form-control" id="num_laps" name="num_laps" #num_laps="ngModel" [(ngModel)]="circuitService.selectedCircuit.num_laps" placeholder="Nº de vueltas">
+    </div>
+    <div class="form-group">
+        <label for="circuit_type">Tipo</label>
+        <input type="text" class="form-control" id="circuit_type" name="circuit_type" #circuit_type="ngModel" [(ngModel)]="circuitService.selectedCircuit.circuit_type" placeholder="Tipo de circuito">
+    </div>
+    <div class="form-group">
+        <label for="prob_overtaking">Probabilidad de adelantamiento</label>
+        <input type="text" class="form-control" id="prob_overtaking" name="prob_overtaking" #prob_overtaking="ngModel" [(ngModel)]="circuitService.selectedCircuit.prob_overtaking" placeholder="Probabilidad de adelantamiento">
+    </div>
+    <div class="form-group">
+        <label for="lvl_bumpiness">Irregularidad del asfalto</label>
+        <input type="text" class="form-control" id="lvl_bumpiness" name="lvl_bumpiness" #lvl_bumpiness="ngModel" [(ngModel)]="circuitService.selectedCircuit.lvl_bumpiness" placeholder="Irregularidad del asfalto">
+    </div>
+    <div class="form-group">
+        <label for="fuel_consumption">Consumo de gasolina</label>
+        <input type="text" class="form-control" id="fuel_consumption" name="fuel_consumption" #fuel_consumption="ngModel" [(ngModel)]="circuitService.selectedCircuit.fuel_consumption" placeholder="Consumo de gasolina">
+    </div>
+    <div class="form-group">
+        <label for="tyre_wear">Desgaste de neumáticos</label>
+        <input type="text" class="form-control" id="tyre_wear" name="tyre_wear" #tyre_wear="ngModel" [(ngModel)]="circuitService.selectedCircuit.tyre_wear" placeholder="Desgaste de neumáticos">
+    </div>
+    <div class="form-group">
+        <label for="pit_time">Duración del pit-stop</label>
+        <input type="text" class="form-control" id="pit_time" name="pit_time" #pit_time="ngModel" [(ngModel)]="circuitService.selectedCircuit.pit_time" placeholder="Duración del pit-stop">
+    </div>
+    <div class="form-group">
+        <label for="car_suspension">Suspensión</label>
+        <input type="text" class="form-control" id="car_suspension" name="car_suspension" #car_suspension="ngModel" [(ngModel)]="circuitService.selectedCircuit.car_suspension" placeholder="Suspensión">
+    </div>
+    <div class="form-group">
+        <label for="ride_height">Altura del coche</label>
+        <input type="text" class="form-control" id="ride_height" name="ride_height" #ride_height="ngModel" [(ngModel)]="circuitService.selectedCircuit.ride_height" placeholder="Altura del coche">
+    </div>
+    <div class="form-group">
+        <label for="wing_level">Carga aerodinámica</label>
+        <input type="text" class="form-control" id="wing_level" name="wing_level" #wing_level="ngModel" [(ngModel)]="circuitService.selectedCircuit.wing_level" placeholder="Carga aerodinámica">
+    </div>
+    <div class="form-group">
+        <label for="img_circuit">URL del trazado</label>
+        <input type="text" class="form-control" id="img_circuit" name="img_circuit" #img_circuit="ngModel" [(ngModel)]="circuitService.selectedCircuit.img_circuit" placeholder="URL del trazado">
+    </div>
+    <div class="form-group">
+        <label for="img_splash_circuit">URL de la imagen del GP</label>
+        <input type="text" class="form-control" id="img_splash_circuit" name="img_splash_circuit" #img_splash_circuit="ngModel" [(ngModel)]="circuitService.selectedCircuit.img_splash_circuit" placeholder="URL de la imagen del GP">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!circuitForm.valid">Guardar</button>
+        <button type="button" class="btn btn-default" (click)="resetForm(circuitForm)">Resetear</button>
+    </div>
+</form>

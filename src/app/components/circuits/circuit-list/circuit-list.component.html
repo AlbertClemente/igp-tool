@@ -1,0 +1,48 @@
+<h5 class="text-center">Listado de circuitos</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col"># vueltas</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Adelantamiento</th>
+            <th scope="col">Irregularidad</th>
+            <th scope="col">Consumo gasolina</th>
+            <th scope="col">Desgaste neumático</th>
+            <th scope="col">Duración pit-stop</th>
+            <th scope="col">Suspensión</th>
+            <th scope="col">Altura del coche</th>
+            <th scope="col">Carga aerodinámica</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let circuit of circuitList">
+            <th scope="row">{{circuit.race_number}}</th>
+            <td>{{circuit.race_name}}</td>
+            <td>{{circuit.num_laps}}</td>
+            <td>{{circuit.circuit_type}}</td>
+            <td>{{circuit.prob_overtaking}}</td>
+            <td>{{circuit.lvl_bumpiness}}</td>
+            <td>{{circuit.fuel_consumption}}</td>
+            <td>{{circuit.tyre_wear}}</td>
+            <td>{{circuit.pit_time}}</td>
+            <td>{{circuit.car_suspension}}</td>
+            <td>{{circuit.ride_height}}</td>
+            <td>{{circuit.wing_level}}</td>
+            <td>
+                <a class="btn btn btn-light" (click)="onEdit(circuit)">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger" (click)="onDelete(circuit.$key)">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

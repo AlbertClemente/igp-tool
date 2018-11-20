@@ -1,0 +1,57 @@
+<form #carConfigForm="ngForm" (ngSubmit)="onSubmit(carConfigForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.$key">
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="date_config">Fecha:</label>
+                <input type="date" class="form-control" id="date_config" name="date_config" #date_config="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.date_config">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="acceleration">Aceleración:</label>
+                <input type="text" class="form-control" id="acceleration" name="acceleration" #acceleration="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.acceleration" placeholder="Aceleración">
+            </div>
+            <div class="form-group">
+                <label for="braking">Frenada:</label>
+                <input type="text" class="form-control" id="braking" name="braking" #braking="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.braking" placeholder="Frenada">
+            </div>
+            <div class="form-group">
+                <label for="cooling">Refrigeración:</label>
+                <input type="text" class="form-control" id="cooling" name="cooling" #cooling="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.cooling" placeholder="Refrigeración">
+            </div>
+            <div class="form-group">
+                <label for="downforce">Aerodinámica:</label>
+                <input type="text" class="form-control" id="downforce" name="downforce" #downforce="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.downforce" placeholder="Aerodinámica">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="fuel_economy">Ahorro de combustible:</label>
+                <input type="text" class="form-control" id="fuel_economy" name="fuel_economy" #fuel_economy="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.fuel_economy" placeholder="Ahorro de combustible">
+            </div>
+            <div class="form-group">
+                <label for="handling">Conducción:</label>
+                <input type="text" class="form-control" id="handling" name="handling" #handling="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.handling" placeholder="Conducción">
+            </div>
+            <div class="form-group">
+                <label for="reliability">Rendimiento:</label>
+                <input type="text" class="form-control" id="reliability" name="reliability" #reliability="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.reliability" placeholder="Rendimiento">
+            </div>
+            <div class="form-group">
+                <label for="tyre_economy">Ahorro de neumáticos:</label>
+                <input type="text" class="form-control" id="tyre_economy" name="tyre_economy" #tyre_economy="ngModel" [(ngModel)]="carConfigService.selectedCarConfig.tyre_economy" placeholder="Ahorro de neumáticos">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" [disabled]="!carConfigForm.valid">Guardar</button>
+                <button type="button" class="btn btn-default" (click)="resetForm(carConfigForm)">Resetear</button>
+            </div>
+        </div>
+    </div>
+</form>
